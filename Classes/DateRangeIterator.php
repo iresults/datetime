@@ -37,7 +37,6 @@ use Countable;
 use DateInterval;
 use DatePeriod;
 use DateTimeInterface;
-use Iresults\DateTime\TimeSlot\TimeSlot;
 use Iresults\DateTime\Exception\InvalidArgumentException;
 
 use Iterator;
@@ -163,7 +162,7 @@ class DateRangeIterator implements Iterator, Countable, ImmutableInterface
     }
 
     /**
-     * @return TimeSlot[]
+     * @return DateRange[]
      */
     protected function getSlots()
     {
@@ -180,7 +179,7 @@ class DateRangeIterator implements Iterator, Countable, ImmutableInterface
 
             foreach ($rawSlots as $currentSlot) {
                 if ($previousSlot) {
-                    $timeSlots[] = new TimeSlot($previousSlot, $currentSlot);
+                    $timeSlots[] = new DateRange($previousSlot, $currentSlot);
                 }
                 $previousSlot = $currentSlot;
             }

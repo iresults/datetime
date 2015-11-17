@@ -35,7 +35,6 @@ namespace Iresults\ResourceBooking\Tests\Unit\Domain\Model;
 
 use Iresults\DateTime\DateRange;
 use Iresults\DateTime\DateRangeIterator;
-use Iresults\DateTime\TimeSlot\TimeSlot;
 
 class DateRangeIteratorTest extends \PHPUnit_Framework_TestCase
 {
@@ -60,7 +59,7 @@ class DateRangeIteratorTest extends \PHPUnit_Framework_TestCase
      */
     public function currentTest()
     {
-        $this->assertInstanceOf(TimeSlot::class, $this->fixture->current());
+        $this->assertInstanceOf(DateRange::class, $this->fixture->current());
     }
 
     /**
