@@ -258,6 +258,17 @@ class Time implements ImmutableInterface
         return new static($dateTime->format('H:i:s'));
     }
 
+    /**
+     * Creates a new time object with the given time in the format "H:i:s" (e.g.: "13:01:20") or "H:i" (e.g.: "09:12")
+     *
+     * @param string $time
+     * @return Time
+     */
+    public static function timeFromTimeString($time)
+    {
+        return new static($time);
+    }
+
 
     /**
      * Debugging

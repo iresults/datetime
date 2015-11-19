@@ -69,6 +69,22 @@ class TimeTest extends \Iresults\ResourceBooking\Tests\BaseTestCase
     /**
      * @test
      */
+    public function timeFromTimeStringTest()
+    {
+        $time = Time::timeFromTimeString('2:12:34');
+        $this->assertSame(2, $time->getHour());
+        $this->assertSame(12, $time->getMinute());
+        $this->assertSame(34, $time->getSecond());
+
+        $time = Time::timeFromTimeString('13:7:4');
+        $this->assertSame(13, $time->getHour());
+        $this->assertSame(7, $time->getMinute());
+        $this->assertSame(4, $time->getSecond());
+    }
+
+    /**
+     * @test
+     */
     public function timeFromSecondsSinceMidnightTest()
     {
         $time = Time::timeFromSecondsSinceMidnight(13 * 60 * 60 + 7 * 60 + 4);
